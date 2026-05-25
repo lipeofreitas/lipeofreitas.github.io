@@ -697,25 +697,77 @@ h4 {
 }
 
 .pipeline {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
   margin-top: 28px;
+  padding-top: 18px;
+}
+
+.pipeline::before {
+  position: absolute;
+  top: 60px;
+  left: 6%;
+  right: 6%;
+  height: 4px;
+  content: "";
+  background: linear-gradient(90deg, var(--executive), var(--finance), var(--operations));
+  border-radius: 999px;
+  opacity: 0.34;
+}
+
+.pipeline::after {
+  position: absolute;
+  top: 53px;
+  right: 5.5%;
+  width: 18px;
+  height: 18px;
+  content: "";
+  border-top: 4px solid var(--operations);
+  border-right: 4px solid var(--operations);
+  opacity: 0.42;
+  transform: rotate(45deg);
 }
 
 .pipeline div {
+  position: relative;
+  z-index: 1;
   min-height: 190px;
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
+  box-shadow: 0 10px 24px rgba(31, 42, 55, 0.06);
 }
 
 .pipeline span {
-  display: block;
+  display: grid;
+  width: 42px;
+  height: 42px;
   margin-bottom: 18px;
-  color: var(--executive);
+  place-items: center;
+  border-radius: 999px;
+  background: var(--executive);
+  color: var(--surface);
+  box-shadow: 0 8px 18px rgba(46, 134, 222, 0.18);
+  font-size: 0.92rem;
   font-weight: 800;
+}
+
+.pipeline div:nth-child(2) span {
+  background: #347fd0;
+}
+
+.pipeline div:nth-child(3) span {
+  background: var(--finance);
+  box-shadow: 0 8px 18px rgba(142, 68, 173, 0.18);
+}
+
+.pipeline div:nth-child(4) span,
+.pipeline div:nth-child(5) span {
+  background: var(--operations);
+  box-shadow: 0 8px 18px rgba(22, 160, 133, 0.18);
 }
 
 .pipeline strong {
@@ -837,6 +889,11 @@ h4 {
 
   .qualitative-preview {
     grid-template-columns: 1fr;
+  }
+
+  .pipeline::before,
+  .pipeline::after {
+    content: none;
   }
 
 }
