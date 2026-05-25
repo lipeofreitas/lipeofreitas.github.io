@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Felipe Freitas portfolio for analytics, BI, SQL, Python, Power BI, and AI automation projects."
+    />
+    <title>Felipe Freitas | Analytics Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Felipe Freitas home">
+        <span class="brand-mark">FF</span>
+        <span>Felipe Freitas</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Analytics engineering | BI | AI automation</p>
+          <h1>Turning operational data into clear business decisions.</h1>
+          <p class="hero-text">
+            Portfolio focused on analytics, dashboard design, SQL modeling,
+            Python pipelines, Power BI, and practical automation workflows.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button secondary" href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">
+              GitHub profile
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Portfolio focus areas">
+          <div class="metric-strip">
+            <span class="accent executive"></span>
+            <span class="accent finance"></span>
+            <span class="accent operations"></span>
+          </div>
+          <h2>Focus Areas</h2>
+          <ul class="focus-list">
+            <li>
+              <strong>Business Intelligence</strong>
+              <span>Power BI reports with executive, finance, and operations views.</span>
+            </li>
+            <li>
+              <strong>Analytics Engineering</strong>
+              <span>SQL Server models, medallion architecture, and documented DAX logic.</span>
+            </li>
+            <li>
+              <strong>AI and Automation</strong>
+              <span>Workflow automation and applied AI to reduce repetitive work.</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="about" class="section-shell about-grid">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>Analytics with a builder mindset.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            I build analytics projects that connect data modeling, reporting,
+            and business interpretation. My work emphasizes clean data layers,
+            clear KPI definitions, practical dashboards, and documentation that
+            makes the project easy to inspect.
+          </p>
+          <div class="skill-cloud" aria-label="Skills">
+            <span>SQL Server</span>
+            <span>T-SQL</span>
+            <span>Python</span>
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>PBIP/TMDL</span>
+            <span>Automation</span>
+            <span>AI workflows</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-shell projects-section">
+        <div class="section-heading">
+          <p class="section-kicker">Featured Project</p>
+          <h2>Brazilian E-Commerce Analytics</h2>
+          <p>
+            End-to-end analytics project using the Olist Brazilian public
+            e-commerce dataset, from ingestion and SQL modeling to a published
+            Power BI dashboard.
+          </p>
+        </div>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <div>
+              <span class="project-label">Live dashboard</span>
+              <h3>Marketplace performance dashboard</h3>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open report
+              </a>
+              <a
+                href="https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub repo
+              </a>
+            </div>
+          </div>
+
+          <div class="dashboard-frame">
+            <iframe
+              title="BrazilianEcommerceAnalytics Dashboard"
+              src="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
+              frameborder="0"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+
+          <div class="project-details">
+            <div>
+              <h4>What it shows</h4>
+              <ul>
+                <li>Executive overview for revenue, orders, AOV, OTIF proxy, and cancellation.</li>
+                <li>Finance view for payment mix, payment gap, rolling trends, and revenue Pareto.</li>
+                <li>Operations view for on-time delivery, OTIF proxy, delivery days, and ABC analysis.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Technical scope</h4>
+              <ul>
+                <li>Bronze, Silver, and Gold SQL Server layers.</li>
+                <li>Power BI semantic model with PBIP/TMDL source control.</li>
+                <li>Documented KPI definitions, thresholds, and data limitations.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section-shell pipeline-section">
+        <p class="section-kicker">Project Pattern</p>
+        <h2>From raw data to business-facing decisions.</h2>
+        <div class="pipeline">
+          <div>
+            <span>01</span>
+            <strong>Ingest</strong>
+            <p>Load raw marketplace CSV files into SQL Server.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Model</strong>
+            <p>Build Silver and Gold views with facts, dimensions, and quality logic.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Analyze</strong>
+            <p>Create DAX measures, KPI references, Pareto, and ABC analysis.</p>
+          </div>
+          <div>
+            <span>04</span>
+            <strong>Publish</strong>
+            <p>Ship a public Power BI report and documented GitHub project.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-shell contact-section">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Let's connect around analytics, BI, and automation.</h2>
+        </div>
+        <a class="button primary" href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">
+          View GitHub
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Felipe Freitas</span>
+      <span>Analytics | BI | AI automation</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
