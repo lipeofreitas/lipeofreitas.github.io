@@ -12,4 +12,4 @@ Featured project:
 
 - Brazilian E-Commerce Analytics
 - Live Power BI dashboard embedded through a public Microsoft Power BI link
-- GitHub repository: `https://github.com/lipeofreitas/brazilian-ecommerce-analytics`
+- GitHub repository: `https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public`

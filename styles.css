@@ -12,6 +12,8 @@
   --good: #2ecc71;
   --attention: #f1c40f;
   --poor: #e74c3c;
+  --linkedin: #0a66c2;
+  --company: #556b2f;
   --shadow: 0 18px 45px rgba(31, 42, 55, 0.12);
 }
 
@@ -186,6 +188,23 @@ h4 {
 .project-links a {
   background: var(--surface);
   color: var(--text);
+}
+
+.button.linkedin {
+  border-color: var(--linkedin);
+  background: var(--linkedin);
+  color: var(--surface);
+}
+
+.button.company {
+  border-color: var(--company);
+  background: var(--company);
+  color: var(--surface);
+}
+
+.button.disabled {
+  cursor: default;
+  pointer-events: none;
 }
 
 .button:hover,
@@ -380,6 +399,13 @@ h4 {
   max-width: 720px;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -419,6 +445,10 @@ h4 {
     width: 100%;
     justify-content: space-between;
   }
+
+  .contact-actions {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 560px) {
@@ -433,6 +463,10 @@ h4 {
   }
 
   .hero-actions {
+    width: 100%;
+  }
+
+  .contact-actions {
     width: 100%;
   }
 }
