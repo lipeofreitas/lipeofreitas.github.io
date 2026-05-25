@@ -103,67 +103,182 @@
 
       <section id="projects" class="section-shell projects-section">
         <div class="section-heading">
-          <p class="section-kicker">Featured Project</p>
-          <h2>Brazilian E-Commerce Analytics</h2>
+          <p class="section-kicker">Featured Projects</p>
+          <h2>Analytics project portfolio</h2>
           <p>
-            End-to-end analytics project using the Olist Brazilian public
-            e-commerce dataset, from ingestion and SQL modeling to a published
-            Power BI dashboard.
+            Selected analytics, BI, automation, and AI projects. More case
+            studies will be added here as they are published.
           </p>
         </div>
 
-        <article class="project-card">
-          <div class="project-meta">
-            <div>
-              <span class="project-label">Live dashboard</span>
-              <h3>Marketplace performance dashboard</h3>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open report
-              </a>
-              <a
-                href="https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub repo
-              </a>
+        <div class="project-carousel" aria-label="Project carousel">
+          <button class="carousel-button previous" type="button" aria-label="Previous project">
+            <span aria-hidden="true">&lsaquo;</span>
+          </button>
+
+          <div class="carousel-side-preview left" aria-hidden="true">
+            <span></span>
+            <strong></strong>
+          </div>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <article class="project-card carousel-slide is-active">
+                <div class="project-meta">
+                  <div>
+                    <span class="project-label">Live dashboard</span>
+                    <h3>Brazilian E-Commerce Analytics</h3>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Open report
+                    </a>
+                    <a
+                      href="https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      GitHub repo
+                    </a>
+                    <a class="disabled" href="#" aria-disabled="true" tabindex="-1">
+                      Case study
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dashboard-frame">
+                  <iframe
+                    title="BrazilianEcommerceAnalytics Dashboard"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
+                    frameborder="0"
+                    allowfullscreen="true"
+                  ></iframe>
+                </div>
+
+                <div class="project-details">
+                  <div>
+                    <h4>What it shows</h4>
+                    <ul>
+                      <li>Executive overview for revenue, orders, AOV, OTIF proxy, and cancellation.</li>
+                      <li>Finance view for payment mix, payment gap, rolling trends, and revenue Pareto.</li>
+                      <li>Operations view for on-time delivery, OTIF proxy, delivery days, and ABC analysis.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Technical scope</h4>
+                    <ul>
+                      <li>Bronze, Silver, and Gold SQL Server layers.</li>
+                      <li>Power BI semantic model with PBIP/TMDL source control.</li>
+                      <li>Documented KPI definitions, thresholds, and data limitations.</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card carousel-slide upcoming-card">
+                <div class="project-meta">
+                  <div>
+                    <span class="project-label">Upcoming project</span>
+                    <h3>Upcoming AI Project...</h3>
+                  </div>
+                  <div class="project-status">In planning</div>
+                </div>
+
+                <div class="project-preview ai-preview" aria-hidden="true">
+                  <div class="preview-toolbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="preview-grid">
+                    <div class="preview-node wide"></div>
+                    <div class="preview-node"></div>
+                    <div class="preview-node"></div>
+                    <div class="preview-node accent-node"></div>
+                    <div class="preview-node wide"></div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div>
+                    <h4>Planned focus</h4>
+                    <ul>
+                      <li>Applied AI workflow with automation and measurable business impact.</li>
+                      <li>Prompting, orchestration, and process documentation.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Expected stack</h4>
+                    <ul>
+                      <li>Python, n8n, Power Automate, and API integrations.</li>
+                      <li>Documentation-first case study for portfolio review.</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card carousel-slide upcoming-card">
+                <div class="project-meta">
+                  <div>
+                    <span class="project-label">Upcoming project</span>
+                    <h3>Upcoming Qualitative Analysis...</h3>
+                  </div>
+                  <div class="project-status">In planning</div>
+                </div>
+
+                <div class="project-preview qualitative-preview" aria-hidden="true">
+                  <div class="preview-document">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="preview-insights">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div>
+                    <h4>Planned focus</h4>
+                    <ul>
+                      <li>Qualitative data synthesis from interviews, notes, or open-text responses.</li>
+                      <li>Themes, sentiment, prioritization, and executive-ready findings.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Expected stack</h4>
+                    <ul>
+                      <li>Python, structured analysis, Power BI, and AI-assisted summarization.</li>
+                      <li>Clear methodology, assumptions, and repeatable outputs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
-          <div class="dashboard-frame">
-            <iframe
-              title="BrazilianEcommerceAnalytics Dashboard"
-              src="https://app.powerbi.com/view?r=eyJrIjoiMjhlMjIzOWItY2ZiNi00YWE4LWIwMDUtY2EyOWNiZmQ0ZjA0IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9&embedImagePlaceholder=true"
-              frameborder="0"
-              allowfullscreen="true"
-            ></iframe>
+          <button class="carousel-button next" type="button" aria-label="Next project">
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
+
+          <div class="carousel-side-preview right" aria-hidden="true">
+            <span></span>
+            <strong></strong>
           </div>
 
-          <div class="project-details">
-            <div>
-              <h4>What it shows</h4>
-              <ul>
-                <li>Executive overview for revenue, orders, AOV, OTIF proxy, and cancellation.</li>
-                <li>Finance view for payment mix, payment gap, rolling trends, and revenue Pareto.</li>
-                <li>Operations view for on-time delivery, OTIF proxy, delivery days, and ABC analysis.</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Technical scope</h4>
-              <ul>
-                <li>Bronze, Silver, and Gold SQL Server layers.</li>
-                <li>Power BI semantic model with PBIP/TMDL source control.</li>
-                <li>Documented KPI definitions, thresholds, and data limitations.</li>
-              </ul>
-            </div>
+          <div class="carousel-dots" aria-label="Select project">
+            <button class="is-active" type="button" aria-label="Show Brazilian E-Commerce Analytics"></button>
+            <button type="button" aria-label="Show upcoming AI project"></button>
+            <button type="button" aria-label="Show upcoming qualitative analysis"></button>
           </div>
-        </article>
+        </div>
       </section>
 
       <section class="section-shell pipeline-section">
