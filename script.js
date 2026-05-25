@@ -1,6 +1,8 @@
 const themeToggle = document.querySelector(".theme-toggle");
 const languageToggle = document.querySelector(".language-toggle");
 const backToTopButton = document.querySelector(".back-to-top");
+const techStackPanel = document.querySelector(".tech-stack-panel");
+const techStackToggle = document.querySelector(".tech-stack-toggle");
 const savedTheme = localStorage.getItem("portfolio-theme");
 const initialTheme = savedTheme ?? "dark";
 const savedLanguage = localStorage.getItem("portfolio-language") ?? "en";
@@ -12,25 +14,27 @@ const translations = {
     "nav.contact": "Contact",
     "theme.dark": "Dark",
     "theme.light": "Light",
-    "hero.eyebrow": "Analytics engineering | BI | AI automation",
+    "hero.eyebrow": "Data engineering and analysis | BI | AI automation",
     "hero.title": "Turning operational data into clear business decisions.",
-    "hero.text": "Portfolio focused on analytics, dashboard design, SQL modeling, Python pipelines, Power BI, and practical automation workflows.",
+    "hero.text": "Portfolio focused on data analysis, dashboard design, SQL modeling, Power BI, and practical automation stacks.",
     "hero.viewProjects": "View projects",
     "hero.githubProfile": "GitHub profile",
     "focus.title": "Focus Areas",
     "focus.biTitle": "Business Intelligence",
     "focus.biText": "Power BI reports with executive, finance, and operations views.",
-    "focus.analyticsTitle": "Analytics Engineering",
+    "focus.analyticsTitle": "Data Engineering and Analysis",
     "focus.analyticsText": "SQL Server models, medallion architecture, and documented DAX logic.",
     "focus.aiTitle": "AI and Automation",
     "focus.aiText": "Workflow automation and applied AI to reduce repetitive work.",
     "about.kicker": "About",
-    "about.title": "Professional data analysis focused on results and client-oriented solutions.",
+    "about.title": "Professional analysis focused on results and client-oriented solutions.",
     "about.text": "I build data analysis projects that connect modeling, reporting, and business interpretation. My work prioritizes clean data layers, clear indicator (KPI) definitions, practical dashboards, and documentation that is easy to review.",
     "about.stackTitle": "Tech Stack",
+    "about.stackMore": "See more!",
+    "about.stackLess": "See less!",
     "projects.kicker": "Featured Projects",
-    "projects.title": "Analytics project portfolio",
-    "projects.text": "Selected analytics, BI, automation, and AI projects. More case studies will be added here as they are published.",
+    "projects.title": "Data analysis project portfolio",
+    "projects.text": "Selected data analysis, BI, automation, and AI projects. More case studies will be added here as they are published.",
     "project.live": "Live dashboard",
     "project.openReport": "Open report",
     "project.githubRepo": "GitHub repo",
@@ -44,7 +48,7 @@ const translations = {
     "project.scope2": "Power BI semantic model with PBIP/TMDL source control.",
     "project.scope3": "Documented KPI definitions, thresholds, and data limitations.",
     "widget.label": "Live widget",
-    "widget.title": "Portfolio Visitor Analytics Widget",
+    "widget.title": "Portfolio Visitor Data Analysis Widget",
     "widget.openApi": "Open API",
     "widget.previewLabel": "Anonymous portfolio tracking",
     "widget.previewCount": "04 unique visitors",
@@ -60,14 +64,14 @@ const translations = {
     "contactWidget.stack1": "GitHub Pages, Cloudflare Workers, D1, and optional Turnstile.",
     "contactWidget.stack2": "Store inquiries first, then add email or workflow notifications.",
     "project.upcoming": "Upcoming project",
-    "project.upcomingAi": "Upcoming AI Project...",
+    "project.upcomingAi": "Upcoming AI Agent Project...",
     "project.inPlanning": "In planning",
     "project.plannedFocus": "Planned focus",
-    "project.aiFocus1": "Applied AI workflow with automation and measurable business impact.",
-    "project.aiFocus2": "Prompting, orchestration, and process documentation.",
+    "project.aiFocus1": "AI agent workflow for CRM lead intake, qualification, and follow-up.",
+    "project.aiFocus2": "Chatbot-assisted interactions connected to structured business processes.",
     "project.expectedStack": "Expected stack",
-    "project.aiStack1": "Python, n8n, Power Automate, and API integrations.",
-    "project.aiStack2": "Documentation-first case study for portfolio review.",
+    "project.aiStack1": "Python, n8n, APIs, AI agents, and chatbots.",
+    "project.aiStack2": "CRM-style lead routing, workflow automation, and documented business logic.",
     "project.upcomingQual": "Upcoming Qualitative Analysis...",
     "project.qualFocus1": "Qualitative data synthesis from interviews, notes, or open-text responses.",
     "project.qualFocus2": "Themes, sentiment, prioritization, and executive-ready findings.",
@@ -82,14 +86,14 @@ const translations = {
     "process.model": "Model",
     "process.modelText": "Model with practical frameworks, medallion layers, and ETL/ELT tuning for reliable outputs.",
     "process.analyze": "Analyze",
-    "process.analyzeText": "Develop formulas, KPIs, Pareto, ABC analysis, hypotheses, and probability-driven reviews.",
+    "process.analyzeText": "Develop formulas, indicators (KPIs), Pareto, ABC analysis, hypotheses, and probability-driven reviews.",
     "process.publish": "Publish",
-    "process.publishText": "Publish reports, workflows, embedded widgets, versions, and market-style GitHub documentation.",
+    "process.publishText": "Publish reports, workflows, embedded widgets, versions, and documentation in GitHub using professional market practices.",
     "contact.kicker": "Contact",
-    "contact.title": "Let's connect around analytics, BI, and automation.",
+    "contact.title": "Let's connect around data analysis, BI, and automation.",
     "contact.github": "View GitHub",
-    "footer.tagline": "Analytics | BI | AI automation",
-    "footer.analytics": "Analytics",
+    "footer.tagline": "Data analysis | BI | AI automation",
+    "footer.analytics": "Data analysis",
     "footer.automation": "Automation",
     "backToTop": "Back to top",
   },
@@ -115,6 +119,8 @@ const translations = {
     "about.title": "Análise profissional com foco no resultado e solução orientada ao cliente.",
     "about.text": "Eu construo projetos de análise de dados que conectam modelagem, relatórios e interpretação de negócio. Meu trabalho prioriza camadas de dados limpas, definições claras de indicadores (KPIs), dashboards práticos e documentação fácil de revisar.",
     "about.stackTitle": "Stack Técnica",
+    "about.stackMore": "Ver mais!",
+    "about.stackLess": "Ver menos!",
     "projects.kicker": "Projetos em Destaque",
     "projects.title": "Portfólio de projetos de análise de dados",
     "projects.text": "Projetos selecionados de análise de dados, BI, automação e IA. Novos estudos de caso serão adicionados aqui conforme forem publicados.",
@@ -134,7 +140,7 @@ const translations = {
     "widget.title": "Widget de Análise de Visitantes",
     "widget.openApi": "Abrir API",
     "widget.previewLabel": "Tracking anônimo do portfólio",
-    "widget.previewCount": "04 visitantes únicos",
+    "widget.previewCount": "04 Visitantes únicos",
     "widget.show1": "Visitas únicas anônimas no site do portfólio.",
     "widget.show2": "Principais países visitantes em um resumo público compacto.",
     "widget.scope1": "API em Cloudflare Worker com persistência em D1.",
@@ -147,14 +153,14 @@ const translations = {
     "contactWidget.stack1": "GitHub Pages, Cloudflare Workers, D1 e Turnstile opcional.",
     "contactWidget.stack2": "Salvar contatos primeiro, depois adicionar email ou notificações de workflow.",
     "project.upcoming": "Projeto futuro",
-    "project.upcomingAi": "Projeto de IA em breve...",
+    "project.upcomingAi": "Projeto de AI Agent em breve...",
     "project.inPlanning": "Em planejamento",
     "project.plannedFocus": "Foco planejado",
-    "project.aiFocus1": "Fluxo de IA aplicada com automação e impacto de negócio mensurável.",
-    "project.aiFocus2": "Prompting, orquestração e documentação do processo.",
+    "project.aiFocus1": "Workflow com agente de IA para entrada, qualificação e follow-up de leads em CRM.",
+    "project.aiFocus2": "Interações assistidas por chatbot conectadas a processos de negócio estruturados.",
     "project.expectedStack": "Stack esperada",
-    "project.aiStack1": "Python, n8n, Power Automate e integrações via API.",
-    "project.aiStack2": "Estudo de caso documentado para revisão no portfólio.",
+    "project.aiStack1": "Python, n8n, APIs, AI agents e chatbots.",
+    "project.aiStack2": "Roteamento de leads em estilo CRM, automação de workflows e lógica de negócio documentada.",
     "project.upcomingQual": "Análise Qualitativa em breve...",
     "project.qualFocus1": "Síntese de dados qualitativos a partir de entrevistas, notas ou respostas abertas.",
     "project.qualFocus2": "Temas, sentimento, priorização e achados prontos para apresentação executiva.",
@@ -171,7 +177,7 @@ const translations = {
     "process.analyze": "Análise",
     "process.analyzeText": "Desenvolver fórmulas, indicadores (KPIs), Pareto, ABC, hipóteses e análises orientadas por probabilidade.",
     "process.publish": "Publicação",
-    "process.publishText": "Publicar relatórios, workflows, widgets embarcados, versões e documentação dentro do GitHub utilizando conceitos do mercado profissional.",
+    "process.publishText": "Publicar relatórios, workflows, widgets embarcados, versões e documentação dentro do GitHub utilizando adaptação do mercado profissional.",
     "contact.kicker": "Contato",
     "contact.title": "Vamos conversar sobre análise de dados, BI e automação.",
     "contact.github": "Ver GitHub",
@@ -200,9 +206,24 @@ const setLanguage = (language) => {
     languageToggle.setAttribute("aria-label", language === "pt" ? "Switch to English" : "Mudar para português");
   }
 
+  updateTechStackToggle();
   updateThemeToggle();
   window.refreshCarouselPreviews?.();
   window.FFVisitorWidget?.refreshLanguage?.();
+};
+
+const updateTechStackToggle = () => {
+  if (!techStackPanel || !techStackToggle) return;
+
+  const language = document.documentElement.dataset.language === "pt" ? "pt" : "en";
+  const dictionary = translations[language] ?? translations.en;
+  const isExpanded = techStackPanel.classList.contains("is-expanded");
+  const label = isExpanded ? dictionary["about.stackLess"] : dictionary["about.stackMore"];
+
+  techStackToggle.textContent = "";
+  techStackToggle.title = label;
+  techStackToggle.setAttribute("aria-label", label);
+  techStackToggle.setAttribute("aria-expanded", isExpanded ? "true" : "false");
 };
 
 const updateThemeToggle = () => {
@@ -233,6 +254,11 @@ themeToggle?.addEventListener("click", () => {
 languageToggle?.addEventListener("click", () => {
   const currentLanguage = document.documentElement.dataset.language === "pt" ? "pt" : "en";
   setLanguage(currentLanguage === "pt" ? "en" : "pt");
+});
+
+techStackToggle?.addEventListener("click", () => {
+  techStackPanel?.classList.toggle("is-expanded");
+  updateTechStackToggle();
 });
 
 backToTopButton?.addEventListener("click", () => {

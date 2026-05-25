@@ -21,6 +21,7 @@
       activeMount = mount;
       mount.classList.add("ff-visitor-widget");
       mount.innerHTML = `
+        <span class="ff-visitor-widget__trend" aria-label="Week-over-week new unique visitors"></span>
         <span class="ff-visitor-widget__count">${isPortuguese() ? "Carregando visitas..." : "Loading visits..."}</span>
         <span class="ff-visitor-widget__countries" aria-label="Top visitor countries"></span>
       `;
@@ -82,15 +83,18 @@
   function renderWidget(mount, data) {
     latestData = data;
     const countElement = mount.querySelector(".ff-visitor-widget__count");
+    const trendElement = mount.querySelector(".ff-visitor-widget__trend");
     const countriesElement = mount.querySelector(".ff-visitor-widget__countries");
 
     if (!data?.ok) {
+      renderTrend(trendElement, null);
       countElement.textContent = isPortuguese() ? "Visitas indisponíveis" : "Visits unavailable";
       countriesElement.textContent = "";
       return;
     }
 
-    countElement.textContent = `${formatCount(data.uniqueVisits)} ${isPortuguese() ? "visitantes únicos" : "unique visitors"}`;
+    renderTrend(trendElement, data.wow);
+    countElement.textContent = `${formatCount(data.uniqueVisits)} ${isPortuguese() ? "Visitantes únicos" : "unique visitors"}`;
     countriesElement.innerHTML = data.countries
       .map((country) => {
         const flagUrl = countryCodeToFlagUrl(country.country);
@@ -103,6 +107,25 @@
         `;
       })
       .join("");
+  }
+
+  function renderTrend(element, wow) {
+    if (!element) return;
+
+    const change = Math.max(0, Number(wow?.change || 0));
+    const trend = change > 0 ? "up" : "flat";
+    const label = isPortuguese()
+      ? "Novos visitantes únicos desde o último domingo"
+      : "New unique visitors since last Sunday";
+
+    element.className = `ff-visitor-widget__trend ff-visitor-widget__trend--${trend}`;
+    element.title = label;
+    element.innerHTML = trend === "flat"
+      ? "<span>-</span>"
+      : `
+        <span class="ff-visitor-widget__trend-icon" aria-hidden="true"></span>
+        <span>+${change}</span>
+      `;
   }
 
   function countryCodeToFlagUrl(countryCode) {
