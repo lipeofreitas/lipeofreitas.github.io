@@ -10,45 +10,72 @@
     <title>Felipe Freitas | Analytics Portfolio</title>
     <script>
       document.documentElement.dataset.theme =
-        localStorage.getItem("portfolio-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        localStorage.getItem("portfolio-theme") || "dark";
     </script>
-    <link rel="stylesheet" href="styles.css?v=dark-flow-2" />
+    <link rel="stylesheet" href="styles.css?v=carousel-widget-1" />
+    <link rel="stylesheet" href="assets/visitor-widget/visitor-widget.css?v=2" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Felipe Freitas home">
-        <span class="brand-mark">FF</span>
+        <img
+          class="brand-avatar"
+          src="assets/profile/felipe-professional-profile.png"
+          alt="Felipe Freitas"
+        />
         <span>Felipe Freitas</span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
+
+      <div class="header-controls" aria-label="Display controls">
+        <button class="language-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+          <span class="toggle-option language-option-en" title="English" aria-label="English">
+            <img src="https://flagcdn.com/24x18/us.png" alt="" aria-hidden="true" />
+            <span>US</span>
+          </span>
+          <span class="toggle-option language-option-pt" title="Portuguese" aria-label="Portuguese">
+            <img src="https://flagcdn.com/24x18/br.png" alt="" aria-hidden="true" />
+            <span>BR</span>
+          </span>
+        </button>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="toggle-option theme-option-dark">
+            <img src="assets/icons/moon-dark-night.png" alt="" aria-hidden="true" />
+            <span>Dark</span>
+          </span>
+          <span class="toggle-option theme-option-light">
+            <img src="assets/icons/sun-light-day.png" alt="" aria-hidden="true" />
+            <span>Light</span>
+          </span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section-shell">
         <div class="hero-copy">
-          <p class="eyebrow">Analytics engineering | BI | AI automation</p>
-          <h1>Turning operational data into clear business decisions.</h1>
-          <p class="hero-text">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Analytics engineering | BI | AI automation</p>
+          <h1 data-i18n="hero.title">Turning operational data into clear business decisions.</h1>
+          <p class="hero-text" data-i18n="hero.text">
             Portfolio focused on analytics, dashboard design, SQL modeling,
             Python pipelines, Power BI, and practical automation workflows.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">View projects</a>
+            <a class="button primary" href="#projects" data-i18n="hero.viewProjects">View projects</a>
             <a class="button secondary" href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">
-              GitHub profile
+              <span data-i18n="hero.githubProfile">GitHub profile</span>
             </a>
             <a class="button linkedin" href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a class="button company disabled" href="#" aria-disabled="true" tabindex="-1">
-              DoubleF Tech Solutions
+            <a class="button company disabled stacked-label" href="#" aria-disabled="true" tabindex="-1">
+              <span>DoubleF Website</span>
+              <em data-i18n="project.soon">(soon)</em>
             </a>
           </div>
         </div>
@@ -59,19 +86,19 @@
             <span class="accent finance"></span>
             <span class="accent operations"></span>
           </div>
-          <h2>Focus Areas</h2>
+          <h2 data-i18n="focus.title">Focus Areas</h2>
           <ul class="focus-list">
             <li>
-              <strong>Business Intelligence</strong>
-              <span>Power BI reports with executive, finance, and operations views.</span>
+              <strong data-i18n="focus.biTitle">Business Intelligence</strong>
+              <span data-i18n="focus.biText">Power BI reports with executive, finance, and operations views.</span>
             </li>
             <li>
-              <strong>Analytics Engineering</strong>
-              <span>SQL Server models, medallion architecture, and documented DAX logic.</span>
+              <strong data-i18n="focus.analyticsTitle">Analytics Engineering</strong>
+              <span data-i18n="focus.analyticsText">SQL Server models, medallion architecture, and documented DAX logic.</span>
             </li>
             <li>
-              <strong>AI and Automation</strong>
-              <span>Workflow automation and applied AI to reduce repetitive work.</span>
+              <strong data-i18n="focus.aiTitle">AI and Automation</strong>
+              <span data-i18n="focus.aiText">Workflow automation and applied AI to reduce repetitive work.</span>
             </li>
           </ul>
         </aside>
@@ -79,39 +106,75 @@
 
       <section id="about" class="section-shell about-grid">
         <div>
-          <p class="section-kicker">About</p>
-          <h2>Analytics with a builder mindset.</h2>
+          <p class="section-kicker" data-i18n="about.kicker">About</p>
+          <h2 data-i18n="about.title">Analytics with a builder mindset.</h2>
         </div>
         <div class="about-copy">
-          <p>
+          <p data-i18n="about.text">
             I build analytics projects that connect data modeling, reporting,
             and business interpretation. My work emphasizes clean data layers,
             clear KPI definitions, practical dashboards, and documentation that
             makes the project easy to inspect.
           </p>
-          <div class="skill-cloud" aria-label="Skills">
-            <span>SQL Server</span>
-            <span>T-SQL</span>
-            <span>Python</span>
-            <span>Power BI</span>
-            <span>DAX</span>
-            <span>PBIP/TMDL</span>
-            <span>Docker</span>
-            <span>Automation</span>
-            <span>AI workflows</span>
-            <span>n8n</span>
-            <span>Power Automate</span>
-            <span>Power Apps</span>
-            <span>SharePoint Lists</span>
+          <div class="tech-stack-panel" aria-label="Skills">
+            <h3 data-i18n="about.stackTitle">Tech Stack</h3>
+            <div class="tech-stack-matrix">
+              <span>SQL Server</span>
+              <span>T-SQL</span>
+              <span>Python</span>
+              <span>Power BI</span>
+              <span>DAX</span>
+              <span>PBIP/TMDL</span>
+              <span>Docker</span>
+              <span>Automation</span>
+              <span>AI workflows</span>
+              <span>n8n</span>
+              <span>Power Automate</span>
+              <span>Power Apps</span>
+              <span>SharePoint Lists</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell pipeline-section">
+        <p class="section-kicker" data-i18n="process.kicker">Project Pattern</p>
+        <h2 data-i18n="process.title">From raw data to business-facing decisions.</h2>
+        <div class="pipeline">
+          <div class="pipeline-flow" aria-hidden="true"></div>
+          <div>
+            <span>01</span>
+            <strong data-i18n="process.breakdown">Breakdown</strong>
+            <p data-i18n="process.breakdownText">Clarify the idea, define business questions, and plan the process end to end.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong data-i18n="process.ingest">Ingest</strong>
+            <p data-i18n="process.ingestText">Load raw marketplace CSV files into SQL Server.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong data-i18n="process.model">Model</strong>
+            <p data-i18n="process.modelText">Build Silver and Gold views with facts, dimensions, and quality logic.</p>
+          </div>
+          <div>
+            <span>04</span>
+            <strong data-i18n="process.analyze">Analyze</strong>
+            <p data-i18n="process.analyzeText">Create DAX measures, KPI references, Pareto, and ABC analysis.</p>
+          </div>
+          <div>
+            <span>05</span>
+            <strong data-i18n="process.publish">Publish</strong>
+            <p data-i18n="process.publishText">Ship a public Power BI report and documented GitHub project.</p>
           </div>
         </div>
       </section>
 
       <section id="projects" class="section-shell projects-section">
         <div class="section-heading">
-          <p class="section-kicker">Featured Projects</p>
-          <h2>Analytics project portfolio</h2>
-          <p>
+          <p class="section-kicker" data-i18n="projects.kicker">Featured Projects</p>
+          <h2 data-i18n="projects.title">Analytics project portfolio</h2>
+          <p data-i18n="projects.text">
             Selected analytics, BI, automation, and AI projects. More case
             studies will be added here as they are published.
           </p>
@@ -119,20 +182,19 @@
 
         <div class="project-carousel" aria-label="Project carousel">
           <button class="carousel-button previous" type="button" aria-label="Previous project">
+            <span class="carousel-button-preview" aria-hidden="true">
+              <small></small>
+              <strong></strong>
+            </span>
             <span aria-hidden="true">&lsaquo;</span>
           </button>
-
-          <div class="carousel-side-preview left" aria-hidden="true">
-            <span></span>
-            <strong></strong>
-          </div>
 
           <div class="carousel-viewport">
             <div class="carousel-track">
               <article class="project-card carousel-slide is-active">
                 <div class="project-meta">
                   <div>
-                    <span class="project-label">Live dashboard</span>
+                    <span class="project-label" data-i18n="project.live">Live dashboard</span>
                     <h3>Brazilian E-Commerce Analytics</h3>
                   </div>
                   <div class="project-links">
@@ -141,18 +203,18 @@
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Open report
+                      <span data-i18n="project.openReport">Open report</span>
                     </a>
                     <a
                       href="https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      GitHub repo
+                      <span data-i18n="project.githubRepo">GitHub repo</span>
                     </a>
                     <a class="disabled stacked-label" href="#" aria-disabled="true" tabindex="-1">
                       <span>Metabase</span>
-                      <em>(soon)</em>
+                      <em data-i18n="project.soon">(soon)</em>
                     </a>
                   </div>
                 </div>
@@ -168,19 +230,90 @@
 
                 <div class="project-details">
                   <div>
-                    <h4>What it shows</h4>
+                    <h4 data-i18n="project.whatShows">What it shows</h4>
                     <ul>
-                      <li>Executive overview for revenue, orders, AOV, OTIF proxy, and cancellation.</li>
-                      <li>Finance view for payment mix, payment gap, rolling trends, and revenue Pareto.</li>
-                      <li>Operations view for on-time delivery, OTIF proxy, delivery days, and ABC analysis.</li>
+                      <li data-i18n="project.show1">Executive overview for revenue, orders, AOV, OTIF proxy, and cancellation.</li>
+                      <li data-i18n="project.show2">Finance view for payment mix, payment gap, rolling trends, and revenue Pareto.</li>
+                      <li data-i18n="project.show3">Operations view for on-time delivery, OTIF proxy, delivery days, and ABC analysis.</li>
                     </ul>
                   </div>
                   <div>
-                    <h4>Technical scope</h4>
+                    <h4 data-i18n="project.scope">Technical scope</h4>
                     <ul>
-                      <li>Bronze, Silver, and Gold SQL Server layers.</li>
-                      <li>Power BI semantic model with PBIP/TMDL source control.</li>
-                      <li>Documented KPI definitions, thresholds, and data limitations.</li>
+                      <li data-i18n="project.scope1">Bronze, Silver, and Gold SQL Server layers.</li>
+                      <li data-i18n="project.scope2">Power BI semantic model with PBIP/TMDL source control.</li>
+                      <li data-i18n="project.scope3">Documented KPI definitions, thresholds, and data limitations.</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card carousel-slide">
+                <div class="project-meta">
+                  <div>
+                    <span class="project-label" data-i18n="widget.label">Live widget</span>
+                    <h3 data-i18n="widget.title">Portfolio Visitor Analytics Widget</h3>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://portfolio-visitor-analytics-api.lipeofreitas.workers.dev/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span data-i18n="widget.openApi">Open API</span>
+                    </a>
+                    <a
+                      href="https://github.com/lipeofreitas/portfolio-visitor-analytics-widget"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span data-i18n="project.githubRepo">GitHub repo</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="project-preview widget-preview" aria-hidden="true">
+                  <div class="widget-preview-card">
+                    <span data-i18n="widget.previewLabel">Anonymous portfolio tracking</span>
+                    <strong>04 unique visitors</strong>
+                    <div class="widget-preview-countries">
+                      <span>
+                        <img src="https://flagcdn.com/24x18/ca.png" alt="" />
+                        04
+                      </span>
+                      <span>
+                        <img src="https://flagcdn.com/24x18/us.png" alt="" />
+                        00
+                      </span>
+                      <span>
+                        <img src="https://flagcdn.com/24x18/br.png" alt="" />
+                        00
+                      </span>
+                    </div>
+                  </div>
+                  <div class="widget-flow-preview">
+                    <div>GitHub Pages</div>
+                    <span></span>
+                    <div>Cloudflare Worker</div>
+                    <span></span>
+                    <div>D1 Database</div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div>
+                    <h4 data-i18n="project.whatShows">What it shows</h4>
+                    <ul>
+                      <li data-i18n="widget.show1">Anonymous unique visits for the portfolio site.</li>
+                      <li data-i18n="widget.show2">Top visitor countries as a compact public summary.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 data-i18n="project.scope">Technical scope</h4>
+                    <ul>
+                      <li data-i18n="widget.scope1">Cloudflare Worker API with D1 persistence.</li>
+                      <li data-i18n="widget.scope2">Frontend widget designed for GitHub Pages and future website reuse.</li>
+                      <li data-i18n="widget.scope3">No raw IP storage; stable anonymous browser identifier.</li>
                     </ul>
                   </div>
                 </div>
@@ -189,10 +322,10 @@
               <article class="project-card carousel-slide upcoming-card">
                 <div class="project-meta">
                   <div>
-                    <span class="project-label">Upcoming project</span>
-                    <h3>Upcoming AI Project...</h3>
+                    <span class="project-label" data-i18n="project.upcoming">Upcoming project</span>
+                    <h3 data-i18n="project.upcomingAi">Upcoming AI Project...</h3>
                   </div>
-                  <div class="project-status">In planning</div>
+                  <div class="project-status" data-i18n="project.inPlanning">In planning</div>
                 </div>
 
                 <div class="project-preview ai-preview" aria-hidden="true">
@@ -212,17 +345,17 @@
 
                 <div class="project-details">
                   <div>
-                    <h4>Planned focus</h4>
+                    <h4 data-i18n="project.plannedFocus">Planned focus</h4>
                     <ul>
-                      <li>Applied AI workflow with automation and measurable business impact.</li>
-                      <li>Prompting, orchestration, and process documentation.</li>
+                      <li data-i18n="project.aiFocus1">Applied AI workflow with automation and measurable business impact.</li>
+                      <li data-i18n="project.aiFocus2">Prompting, orchestration, and process documentation.</li>
                     </ul>
                   </div>
                   <div>
-                    <h4>Expected stack</h4>
+                    <h4 data-i18n="project.expectedStack">Expected stack</h4>
                     <ul>
-                      <li>Python, n8n, Power Automate, and API integrations.</li>
-                      <li>Documentation-first case study for portfolio review.</li>
+                      <li data-i18n="project.aiStack1">Python, n8n, Power Automate, and API integrations.</li>
+                      <li data-i18n="project.aiStack2">Documentation-first case study for portfolio review.</li>
                     </ul>
                   </div>
                 </div>
@@ -231,10 +364,10 @@
               <article class="project-card carousel-slide upcoming-card">
                 <div class="project-meta">
                   <div>
-                    <span class="project-label">Upcoming project</span>
-                    <h3>Upcoming Qualitative Analysis...</h3>
+                    <span class="project-label" data-i18n="project.upcoming">Upcoming project</span>
+                    <h3 data-i18n="project.upcomingQual">Upcoming Qualitative Analysis...</h3>
                   </div>
-                  <div class="project-status">In planning</div>
+                  <div class="project-status" data-i18n="project.inPlanning">In planning</div>
                 </div>
 
                 <div class="project-preview qualitative-preview" aria-hidden="true">
@@ -253,17 +386,17 @@
 
                 <div class="project-details">
                   <div>
-                    <h4>Planned focus</h4>
+                    <h4 data-i18n="project.plannedFocus">Planned focus</h4>
                     <ul>
-                      <li>Qualitative data synthesis from interviews, notes, or open-text responses.</li>
-                      <li>Themes, sentiment, prioritization, and executive-ready findings.</li>
+                      <li data-i18n="project.qualFocus1">Qualitative data synthesis from interviews, notes, or open-text responses.</li>
+                      <li data-i18n="project.qualFocus2">Themes, sentiment, prioritization, and executive-ready findings.</li>
                     </ul>
                   </div>
                   <div>
-                    <h4>Expected stack</h4>
+                    <h4 data-i18n="project.expectedStack">Expected stack</h4>
                     <ul>
-                      <li>Python, structured analysis, Power BI, and AI-assisted summarization.</li>
-                      <li>Clear methodology, assumptions, and repeatable outputs.</li>
+                      <li data-i18n="project.qualStack1">Python, structured analysis, Power BI, and AI-assisted summarization.</li>
+                      <li data-i18n="project.qualStack2">Clear methodology, assumptions, and repeatable outputs.</li>
                     </ul>
                   </div>
                 </div>
@@ -272,69 +405,37 @@
           </div>
 
           <button class="carousel-button next" type="button" aria-label="Next project">
+            <span class="carousel-button-preview" aria-hidden="true">
+              <small></small>
+              <strong></strong>
+            </span>
             <span aria-hidden="true">&rsaquo;</span>
           </button>
 
-          <div class="carousel-side-preview right" aria-hidden="true">
-            <span></span>
-            <strong></strong>
-          </div>
-
           <div class="carousel-dots" aria-label="Select project">
             <button class="is-active" type="button" aria-label="Show Brazilian E-Commerce Analytics"></button>
+            <button type="button" aria-label="Show Portfolio Visitor Analytics Widget"></button>
             <button type="button" aria-label="Show upcoming AI project"></button>
             <button type="button" aria-label="Show upcoming qualitative analysis"></button>
           </div>
         </div>
       </section>
 
-      <section class="section-shell pipeline-section">
-        <p class="section-kicker">Project Pattern</p>
-        <h2>From raw data to business-facing decisions.</h2>
-        <div class="pipeline">
-          <div class="pipeline-flow" aria-hidden="true"></div>
-          <div>
-            <span>01</span>
-            <strong>Breakdown</strong>
-            <p>Clarify the idea, define business questions, and plan the process end to end.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <strong>Ingest</strong>
-            <p>Load raw marketplace CSV files into SQL Server.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <strong>Model</strong>
-            <p>Build Silver and Gold views with facts, dimensions, and quality logic.</p>
-          </div>
-          <div>
-            <span>04</span>
-            <strong>Analyze</strong>
-            <p>Create DAX measures, KPI references, Pareto, and ABC analysis.</p>
-          </div>
-          <div>
-            <span>05</span>
-            <strong>Publish</strong>
-            <p>Ship a public Power BI report and documented GitHub project.</p>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" class="section-shell contact-section">
         <div>
-          <p class="section-kicker">Contact</p>
-          <h2>Let's connect around analytics, BI, and automation.</h2>
+          <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+          <h2 data-i18n="contact.title">Let's connect around analytics, BI, and automation.</h2>
         </div>
         <div class="contact-actions">
           <a class="button primary" href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">
-            View GitHub
+            <span data-i18n="contact.github">View GitHub</span>
           </a>
           <a class="button linkedin" href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a class="button company disabled" href="#" aria-disabled="true" tabindex="-1">
-            DoubleF Tech Solutions
+          <a class="button company disabled stacked-label" href="#" aria-disabled="true" tabindex="-1">
+            <span>DoubleF Website</span>
+            <em data-i18n="project.soon">(soon)</em>
           </a>
         </div>
       </section>
@@ -342,9 +443,32 @@
 
     <footer class="site-footer">
       <span>Felipe Freitas</span>
-      <span>Analytics | BI | AI automation</span>
+      <nav class="footer-links" aria-label="Social links">
+        <a href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">GitHub</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+      <nav class="footer-links footer-topics" aria-label="Portfolio topics">
+        <a href="#projects">Analytics</a>
+        <span aria-hidden="true">•</span>
+        <a href="#projects">BI</a>
+        <span aria-hidden="true">•</span>
+        <a href="#projects" data-i18n="footer.automation">Automation</a>
+      </nav>
+      <div data-visitor-widget></div>
     </footer>
 
-    <script src="script.js?v=dark-flow-2"></script>
+    <button class="back-to-top" type="button" data-i18n="backToTop" aria-label="Back to top">
+      Back to top
+    </button>
+
+    <script src="assets/visitor-widget/visitor-widget.js?v=6"></script>
+    <script src="script.js?v=carousel-widget-1"></script>
+    <script>
+      FFVisitorWidget.init({
+        apiUrl: "https://portfolio-visitor-analytics-api.lipeofreitas.workers.dev",
+        siteId: "portfolio"
+      });
+    </script>
   </body>
 </html>
