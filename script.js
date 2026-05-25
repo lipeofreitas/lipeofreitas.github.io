@@ -1,3 +1,25 @@
+const themeToggle = document.querySelector(".theme-toggle");
+const savedTheme = localStorage.getItem("portfolio-theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const initialTheme = savedTheme ?? (prefersDark ? "dark" : "light");
+
+const setTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("portfolio-theme", theme);
+
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "Light" : "Dark";
+    themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+  }
+};
+
+setTheme(initialTheme);
+
+themeToggle?.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  setTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 

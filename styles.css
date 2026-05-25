@@ -6,6 +6,7 @@
   --muted: #666666;
   --border: #d9d9d9;
   --border-soft: #e5e5e5;
+  --header-bg: rgba(247, 247, 247, 0.92);
   --executive: #2e86de;
   --finance: #8e44ad;
   --operations: #16a085;
@@ -15,6 +16,18 @@
   --linkedin: #0a66c2;
   --company: #556b2f;
   --shadow: 0 18px 45px rgba(31, 42, 55, 0.12);
+}
+
+[data-theme="dark"] {
+  --bg: #0f1216;
+  --surface: #171b21;
+  --surface-soft: #20262d;
+  --text: #f2f4f7;
+  --muted: #aeb7c2;
+  --border: #303741;
+  --border-soft: #252b33;
+  --header-bg: rgba(15, 18, 22, 0.9);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -52,7 +65,7 @@ a {
   justify-content: space-between;
   gap: 24px;
   padding: 18px clamp(18px, 5vw, 64px);
-  background: rgba(247, 247, 247, 0.92);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border-soft);
   backdrop-filter: blur(12px);
 }
@@ -92,6 +105,23 @@ a {
 .nav-links a.is-active {
   color: var(--text);
   border-bottom-color: var(--executive);
+}
+
+.theme-toggle {
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--executive);
 }
 
 .section-shell {
@@ -703,36 +733,51 @@ h4 {
   gap: 14px;
   margin-top: 28px;
   padding-top: 18px;
+  isolation: isolate;
 }
 
-.pipeline::before {
-  position: absolute;
-  top: 112px;
-  left: 3%;
-  right: 4%;
-  height: 14px;
-  content: "";
-  background: linear-gradient(90deg, rgba(231, 76, 60, 0.18), rgba(241, 196, 15, 0.24), rgba(46, 204, 113, 0.36), rgba(22, 160, 133, 0.42));
-  border-radius: 999px;
-  box-shadow: 0 12px 26px rgba(22, 160, 133, 0.1);
-}
-
+.pipeline::before,
 .pipeline::after {
-  position: absolute;
-  top: 91px;
-  right: 2.5%;
-  width: 56px;
-  height: 56px;
-  content: "";
-  background: linear-gradient(135deg, rgba(46, 204, 113, 0.36), rgba(22, 160, 133, 0.46));
-  clip-path: polygon(0 0, 100% 50%, 0 100%, 22% 50%);
-  opacity: 0.9;
-  filter: drop-shadow(0 12px 20px rgba(22, 160, 133, 0.12));
+  content: none;
 }
 
-.pipeline div {
+.pipeline-flow {
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  right: -76px;
+  z-index: 0;
+  height: 22px;
+  background: linear-gradient(90deg, rgba(231, 76, 60, 0.46), rgba(241, 196, 15, 0.42), rgba(46, 204, 113, 0.5), rgba(22, 160, 133, 0.58));
+  border-radius: 999px;
+  box-shadow: 0 14px 28px rgba(22, 160, 133, 0.14);
+  transform: translateY(-50%);
+}
+
+.pipeline-flow::before {
+  position: absolute;
+  inset: 3px;
+  content: "";
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
+}
+
+.pipeline-flow::after {
+  position: absolute;
+  top: 50%;
+  right: -46px;
+  width: 78px;
+  height: 78px;
+  content: "";
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.58), rgba(22, 160, 133, 0.72));
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 26% 50%);
+  filter: drop-shadow(0 12px 22px rgba(22, 160, 133, 0.18));
+  transform: translateY(-50%);
+}
+
+.pipeline > div:not(.pipeline-flow) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-height: 190px;
   padding: 22px;
   border: 1px solid var(--border);
@@ -741,7 +786,7 @@ h4 {
   box-shadow: 0 10px 24px rgba(31, 42, 55, 0.06);
 }
 
-.pipeline span {
+.pipeline > div:not(.pipeline-flow) span {
   display: grid;
   width: 42px;
   height: 42px;
@@ -755,28 +800,28 @@ h4 {
   font-weight: 800;
 }
 
-.pipeline div:nth-child(2) span {
+.pipeline > div:nth-child(3) span {
   background: #347fd0;
 }
 
-.pipeline div:nth-child(3) span {
+.pipeline > div:nth-child(4) span {
   background: var(--finance);
   box-shadow: 0 8px 18px rgba(142, 68, 173, 0.18);
 }
 
-.pipeline div:nth-child(4) span,
-.pipeline div:nth-child(5) span {
+.pipeline > div:nth-child(5) span,
+.pipeline > div:nth-child(6) span {
   background: var(--operations);
   box-shadow: 0 8px 18px rgba(22, 160, 133, 0.18);
 }
 
-.pipeline strong {
+.pipeline > div:not(.pipeline-flow) strong {
   display: block;
   margin-bottom: 8px;
   font-size: 1.12rem;
 }
 
-.pipeline p {
+.pipeline > div:not(.pipeline-flow) p {
   color: var(--muted);
 }
 
@@ -891,9 +936,8 @@ h4 {
     grid-template-columns: 1fr;
   }
 
-  .pipeline::before,
-  .pipeline::after {
-    content: none;
+  .pipeline-flow {
+    display: none;
   }
 
 }

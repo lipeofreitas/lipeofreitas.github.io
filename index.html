@@ -8,7 +8,12 @@
       content="Felipe Freitas portfolio for analytics, BI, SQL, Python, Power BI, and AI automation projects."
     />
     <title>Felipe Freitas | Analytics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=process-flow-2" />
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("portfolio-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
+    <link rel="stylesheet" href="styles.css?v=dark-flow-2" />
   </head>
   <body>
     <header class="site-header">
@@ -21,6 +26,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
       </nav>
     </header>
 
@@ -286,6 +292,7 @@
         <p class="section-kicker">Project Pattern</p>
         <h2>From raw data to business-facing decisions.</h2>
         <div class="pipeline">
+          <div class="pipeline-flow" aria-hidden="true"></div>
           <div>
             <span>01</span>
             <strong>Breakdown</strong>
@@ -338,6 +345,6 @@
       <span>Analytics | BI | AI automation</span>
     </footer>
 
-    <script src="script.js?v=process-flow-2"></script>
+    <script src="script.js?v=dark-flow-2"></script>
   </body>
 </html>
