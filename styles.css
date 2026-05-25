@@ -219,6 +219,18 @@ h4 {
   pointer-events: none;
 }
 
+.project-links a.stacked-label {
+  min-height: 52px;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.08;
+}
+
+.project-links a.stacked-label em {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
 .button:hover,
 .project-links a:hover {
   transform: translateY(-1px);
