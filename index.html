@@ -12,7 +12,7 @@
       document.documentElement.dataset.theme =
         localStorage.getItem("portfolio-theme") || "dark";
     </script>
-    <link rel="stylesheet" href="styles.css?v=carousel-widget-1" />
+    <link rel="stylesheet" href="styles.css?v=contact-widget-1" />
     <link rel="stylesheet" href="assets/visitor-widget/visitor-widget.css?v=2" />
   </head>
   <body>
@@ -36,11 +36,15 @@
         <button class="language-toggle" type="button" aria-label="Switch language" aria-pressed="false">
           <span class="toggle-option language-option-en" title="English" aria-label="English">
             <img src="https://flagcdn.com/24x18/us.png" alt="" aria-hidden="true" />
-            <span>US</span>
+            <span>EN</span>
           </span>
           <span class="toggle-option language-option-pt" title="Portuguese" aria-label="Portuguese">
             <img src="https://flagcdn.com/24x18/br.png" alt="" aria-hidden="true" />
-            <span>BR</span>
+            <span>PT</span>
+          </span>
+          <span class="toggle-option language-option-es is-disabled" title="Coming soon!" aria-label="Spanish coming soon">
+            <img src="https://flagcdn.com/24x18/es.png" alt="" aria-hidden="true" />
+            <span>ES</span>
           </span>
         </button>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
@@ -72,6 +76,10 @@
             </a>
             <a class="button linkedin" href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">
               LinkedIn
+            </a>
+            <a class="button disabled stacked-label future-link" href="https://medium.com/@lipeofreitas" aria-disabled="true" tabindex="-1">
+              <span>Medium Content</span>
+              <em data-i18n="project.soon">(soon)</em>
             </a>
             <a class="button company disabled stacked-label" href="#" aria-disabled="true" tabindex="-1">
               <span>DoubleF Website</span>
@@ -122,16 +130,19 @@
               <span>SQL Server</span>
               <span>T-SQL</span>
               <span>Python</span>
-              <span>Power BI</span>
+              <span>Power BI/Metabase</span>
               <span>DAX</span>
-              <span>PBIP/TMDL</span>
+              <span>PBIX/PBIP/TMDL</span>
               <span>Docker</span>
               <span>Automation</span>
               <span>AI workflows</span>
               <span>n8n</span>
-              <span>Power Automate</span>
-              <span>Power Apps</span>
-              <span>SharePoint Lists</span>
+              <span>Power Automate/Apps</span>
+              <span>Microsoft Office</span>
+              <span>SharePoint</span>
+              <span>Google Sheets/Script</span>
+              <span>Airtable</span>
+              <span>NocoDB</span>
             </div>
           </div>
         </div>
@@ -275,7 +286,7 @@
                 <div class="project-preview widget-preview" aria-hidden="true">
                   <div class="widget-preview-card">
                     <span data-i18n="widget.previewLabel">Anonymous portfolio tracking</span>
-                    <strong>04 unique visitors</strong>
+                    <strong data-i18n="widget.previewCount">04 unique visitors</strong>
                     <div class="widget-preview-countries">
                       <span>
                         <img src="https://flagcdn.com/24x18/ca.png" alt="" />
@@ -314,6 +325,50 @@
                       <li data-i18n="widget.scope1">Cloudflare Worker API with D1 persistence.</li>
                       <li data-i18n="widget.scope2">Frontend widget designed for GitHub Pages and future website reuse.</li>
                       <li data-i18n="widget.scope3">No raw IP storage; stable anonymous browser identifier.</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card carousel-slide upcoming-card">
+                <div class="project-meta">
+                  <div>
+                    <span class="project-label" data-i18n="project.upcoming">Upcoming project</span>
+                    <h3 data-i18n="contactWidget.title">Upcoming Contact Intake Widget for Websites</h3>
+                  </div>
+                  <div class="project-status" data-i18n="project.inPlanning">In planning</div>
+                </div>
+
+                <div class="project-preview contact-widget-preview" aria-hidden="true">
+                  <div class="contact-form-preview">
+                    <span data-i18n="contactWidget.previewLabel">Project inquiry form</span>
+                    <div></div>
+                    <div></div>
+                    <div class="message-line"></div>
+                    <button type="button">Send inquiry</button>
+                  </div>
+                  <div class="contact-widget-flow">
+                    <div>GitHub Pages</div>
+                    <span></span>
+                    <div>Cloudflare Worker</div>
+                    <span></span>
+                    <div>D1 + Notification</div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div>
+                    <h4 data-i18n="project.plannedFocus">Planned focus</h4>
+                    <ul>
+                      <li data-i18n="contactWidget.focus1">Contact form for project inquiries without exposing a personal email.</li>
+                      <li data-i18n="contactWidget.focus2">Simple, privacy-conscious intake flow for static websites.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 data-i18n="project.expectedStack">Expected stack</h4>
+                    <ul>
+                      <li data-i18n="contactWidget.stack1">GitHub Pages, Cloudflare Workers, D1, and optional Turnstile.</li>
+                      <li data-i18n="contactWidget.stack2">Store inquiries first, then add email or workflow notifications.</li>
                     </ul>
                   </div>
                 </div>
@@ -415,6 +470,7 @@
           <div class="carousel-dots" aria-label="Select project">
             <button class="is-active" type="button" aria-label="Show Brazilian E-Commerce Analytics"></button>
             <button type="button" aria-label="Show Portfolio Visitor Analytics Widget"></button>
+            <button type="button" aria-label="Show upcoming contact intake widget"></button>
             <button type="button" aria-label="Show upcoming AI project"></button>
             <button type="button" aria-label="Show upcoming qualitative analysis"></button>
           </div>
@@ -433,6 +489,10 @@
           <a class="button linkedin" href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
+          <a class="button disabled stacked-label future-link" href="https://medium.com/@lipeofreitas" aria-disabled="true" tabindex="-1">
+            <span>Medium Content</span>
+            <em data-i18n="project.soon">(soon)</em>
+          </a>
           <a class="button company disabled stacked-label" href="#" aria-disabled="true" tabindex="-1">
             <span>DoubleF Website</span>
             <em data-i18n="project.soon">(soon)</em>
@@ -447,9 +507,11 @@
         <a href="https://github.com/lipeofreitas" target="_blank" rel="noreferrer">GitHub</a>
         <span aria-hidden="true">•</span>
         <a href="https://www.linkedin.com/in/felipe-oliveira-freitas-silva/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://medium.com/@lipeofreitas" target="_blank" rel="noreferrer">Medium Content</a>
       </nav>
       <nav class="footer-links footer-topics" aria-label="Portfolio topics">
-        <a href="#projects">Analytics</a>
+        <a href="#projects" data-i18n="footer.analytics">Analytics</a>
         <span aria-hidden="true">•</span>
         <a href="#projects">BI</a>
         <span aria-hidden="true">•</span>
@@ -462,8 +524,8 @@
       Back to top
     </button>
 
-    <script src="assets/visitor-widget/visitor-widget.js?v=6"></script>
-    <script src="script.js?v=carousel-widget-1"></script>
+    <script src="assets/visitor-widget/visitor-widget.js?v=7"></script>
+    <script src="script.js?v=pt-copy-1"></script>
     <script>
       FFVisitorWidget.init({
         apiUrl: "https://portfolio-visitor-analytics-api.lipeofreitas.workers.dev",

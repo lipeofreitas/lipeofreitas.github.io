@@ -6,6 +6,9 @@
     storageKey: "ff_visitor_id"
   };
 
+  let activeMount = null;
+  let latestData = null;
+
   window.FFVisitorWidget = {
     init(userConfig) {
       const config = { ...DEFAULT_CONFIG, ...(userConfig || {}) };
@@ -15,9 +18,10 @@
         return;
       }
 
+      activeMount = mount;
       mount.classList.add("ff-visitor-widget");
       mount.innerHTML = `
-        <span class="ff-visitor-widget__count">Loading visits...</span>
+        <span class="ff-visitor-widget__count">${isPortuguese() ? "Carregando visitas..." : "Loading visits..."}</span>
         <span class="ff-visitor-widget__countries" aria-label="Top visitor countries"></span>
       `;
 
@@ -37,6 +41,10 @@
         .then((response) => response.json())
         .then((data) => renderWidget(mount, data))
         .catch(() => renderWidget(mount, null));
+    },
+
+    refreshLanguage() {
+      if (activeMount) renderWidget(activeMount, latestData);
     }
   };
 
@@ -72,16 +80,17 @@
   }
 
   function renderWidget(mount, data) {
+    latestData = data;
     const countElement = mount.querySelector(".ff-visitor-widget__count");
     const countriesElement = mount.querySelector(".ff-visitor-widget__countries");
 
     if (!data?.ok) {
-      countElement.textContent = "Visits unavailable";
+      countElement.textContent = isPortuguese() ? "Visitas indisponíveis" : "Visits unavailable";
       countriesElement.textContent = "";
       return;
     }
 
-    countElement.textContent = `${formatCount(data.uniqueVisits)} unique visitors`;
+    countElement.textContent = `${formatCount(data.uniqueVisits)} ${isPortuguese() ? "visitantes únicos" : "unique visitors"}`;
     countriesElement.innerHTML = data.countries
       .map((country) => {
         const flagUrl = countryCodeToFlagUrl(country.country);
@@ -121,5 +130,9 @@
   function formatCount(value) {
     const number = Number(value || 0);
     return number < 100 ? String(number).padStart(2, "0") : formatNumber(number);
+  }
+
+  function isPortuguese() {
+    return document.documentElement.lang?.toLowerCase().startsWith("pt");
   }
 })();
