@@ -334,13 +334,28 @@
                 </div>
               </article>
 
-              <article class="project-card carousel-slide upcoming-card">
+              <article class="project-card carousel-slide">
                 <div class="project-meta">
                   <div>
-                    <span class="project-label" data-i18n="project.upcoming">Upcoming project</span>
-                    <h3 data-i18n="contactWidget.title">Upcoming Contact Intake Widget for Websites</h3>
+                    <span class="project-label" data-i18n="contactWidget.label">Live workflow</span>
+                    <h3 data-i18n="contactWidget.title">Contact Intake Widget for Websites</h3>
                   </div>
-                  <div class="project-status" data-i18n="project.inPlanning">In planning</div>
+                  <div class="project-links">
+                    <a
+                      href="https://portfolio-contact-intake-api.lipeofreitas.workers.dev/health"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span data-i18n="widget.openApi">Open API</span>
+                    </a>
+                    <a
+                      href="https://github.com/lipeofreitas/portfolio-contact-intake-worker"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span data-i18n="project.githubRepo">GitHub repo</span>
+                    </a>
+                  </div>
                 </div>
 
                 <div class="project-preview contact-widget-preview" aria-hidden="true">
@@ -362,17 +377,17 @@
 
                 <div class="project-details">
                   <div>
-                    <h4 data-i18n="project.plannedFocus">Planned focus</h4>
+                    <h4 data-i18n="project.whatShows">What it shows</h4>
                     <ul>
                       <li data-i18n="contactWidget.focus1">Contact form for project inquiries without exposing a personal email.</li>
-                      <li data-i18n="contactWidget.focus2">Simple, privacy-conscious intake flow for static websites.</li>
+                      <li data-i18n="contactWidget.focus2">Serverless intake flow with stored submissions and email notification.</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 data-i18n="project.expectedStack">Expected stack</h4>
+                    <h4 data-i18n="project.scope">Technical scope</h4>
                     <ul>
-                      <li data-i18n="contactWidget.stack1">GitHub Pages, Cloudflare Workers, D1, and optional Turnstile.</li>
-                      <li data-i18n="contactWidget.stack2">Store inquiries first, then add email or workflow notifications.</li>
+                      <li data-i18n="contactWidget.stack1">GitHub Pages widget, Cloudflare Worker API, and D1 persistence.</li>
+                      <li data-i18n="contactWidget.stack2">Resend email notification after storage, with D1 delivery status tracking.</li>
                     </ul>
                   </div>
                 </div>
@@ -474,7 +489,7 @@
           <div class="carousel-dots" aria-label="Select project">
             <button class="is-active" type="button" aria-label="Show Brazilian E-Commerce Analytics"></button>
             <button type="button" aria-label="Show Portfolio Visitor Analytics Widget"></button>
-            <button type="button" aria-label="Show upcoming contact intake widget"></button>
+            <button type="button" aria-label="Show contact intake widget"></button>
             <button type="button" aria-label="Show upcoming AI project"></button>
             <button type="button" aria-label="Show upcoming qualitative analysis"></button>
           </div>
