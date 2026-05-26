@@ -335,6 +335,12 @@ h4 {
   color: var(--surface);
 }
 
+.button.medium {
+  border-color: #00ab6c;
+  background: #00ab6c;
+  color: #ffffff;
+}
+
 .button.company {
   border-color: var(--border);
   background: var(--surface-soft);
@@ -705,11 +711,18 @@ h4 {
 }
 
 .section-heading {
-  max-width: 820px;
-  margin-bottom: 30px;
+  max-width: 1040px;
+  margin-bottom: 34px;
+}
+
+.projects-section .section-heading h2 {
+  max-width: 980px;
+  font-size: clamp(2.5rem, 5.3vw, 4.9rem);
+  line-height: 1.02;
 }
 
 .section-heading p {
+  max-width: 760px;
   color: var(--muted);
 }
 
