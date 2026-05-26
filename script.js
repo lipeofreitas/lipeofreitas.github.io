@@ -91,6 +91,7 @@ const translations = {
     "process.publishText": "Publish reports, workflows, embedded widgets, versions, and documentation in GitHub using professional market practices.",
     "contact.kicker": "Contact",
     "contact.title": "Let's connect around data analysis, BI, and automation.",
+    "contact.text": "LinkedIn is the fastest way to reach me. For project inquiries, use the contact form below.",
     "contact.github": "View GitHub",
     "footer.tagline": "Data analysis | BI | AI automation",
     "footer.analytics": "Data analysis",
@@ -180,6 +181,7 @@ const translations = {
     "process.publishText": "Publicar relatórios, workflows, widgets embarcados, versões e documentação dentro do GitHub utilizando adaptação do mercado profissional.",
     "contact.kicker": "Contato",
     "contact.title": "Vamos conversar sobre análise de dados, BI e automação.",
+    "contact.text": "LinkedIn é a forma mais rápida de falar comigo. Para propostas de projeto, use o formulário abaixo.",
     "contact.github": "Ver GitHub",
     "footer.tagline": "Análise de dados | BI | Automação com IA",
     "footer.analytics": "Análise de dados",
@@ -210,6 +212,7 @@ const setLanguage = (language) => {
   updateThemeToggle();
   window.refreshCarouselPreviews?.();
   window.FFVisitorWidget?.refreshLanguage?.();
+  window.dispatchEvent(new CustomEvent("portfolio-language-change", { detail: { language } }));
 };
 
 const updateTechStackToggle = () => {
