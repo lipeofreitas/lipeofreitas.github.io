@@ -5,11 +5,11 @@ Personal portfolio for analytics, BI, SQL, Python, Power BI, and AI automation p
 Live site:
 
 ```text
-https://lipeofreitas.github.io
+https://felipefreitas-perspective.github.io
 ```
 
 Featured project:
 
 - Brazilian E-Commerce Analytics
 - Live Power BI dashboard embedded through a public Microsoft Power BI link
-- GitHub repository: `https://github.com/lipeofreitas/brazilian-ecommerce-analytics-public`
+- GitHub repository: `https://github.com/felipefreitas-perspective/brazilian-ecommerce-analytics-public`
